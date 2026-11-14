@@ -3,246 +3,250 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f7f2">
-  <meta name="description" content="PUSPITAN is an independent Android app developer based in Bandung, Indonesia, creating thoughtful digital experiences. Discover apps on Google Play and get support.">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="description" content="PUSPITAN creates thoughtful Android apps with a focus on clarity, simplicity and everyday usefulness. Independent app developer based in Indonesia.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="PUSPITAN — Android Apps, Made with Care">
-  <meta property="og:description" content="Thoughtful Android apps and simple digital experiences from Bandung, Indonesia.">
+  <meta property="og:title" content="PUSPITAN — Thoughtful apps, made simple.">
+  <meta property="og:description" content="Independent Android app development from Indonesia. Discover apps and get support.">
   <meta property="og:url" content="https://puspitan680.github.io/">
   <link rel="canonical" href="https://puspitan680.github.io/">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231a4037'/%3E%3Cpath d='M18 46V18h15c9 0 14 5 14 13s-5 13-14 13h-6v2zm9-10h6c4 0 6-2 6-5s-2-5-6-5h-6z' fill='%23f5f3e9'/%3E%3C/svg%3E">
-  <title>PUSPITAN — Android Apps, Made with Care</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='19' fill='%231b1b1f'/%3E%3Cpath d='M18 46V18h15c9 0 14 5 14 13s-5 13-14 13h-6v2zm9-10h6c4 0 6-2 6-5s-2-5-6-5h-6z' fill='white'/%3E%3C/svg%3E">
+  <title>PUSPITAN — Thoughtful apps, made simple.</title>
   <style>
     :root {
       color-scheme: light;
-      --paper: #f6f7f2;
-      --paper-deep: #edf0e8;
-      --ink: #18231f;
-      --muted: #68736d;
-      --green: #1a4037;
-      --green-2: #275b4e;
-      --line: rgba(24, 35, 31, .12);
-      --white: #fffefa;
-      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --bg: #f5f5f7;
+      --ink: #17171b;
+      --muted: #74747d;
+      --soft: #a0a0a8;
+      --line: rgba(24, 24, 30, .09);
+      --glass: rgba(255, 255, 255, .62);
+      --glass-strong: rgba(255, 255, 255, .78);
+      --shadow: 0 22px 70px rgba(28, 30, 42, .08), 0 2px 10px rgba(28, 30, 42, .035);
+      --radius: 26px;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Inter, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
+      margin: 0; min-width: 320px; color: var(--ink); font-family: var(--sans);
+      background:
+        radial-gradient(ellipse 600px 460px at 50% 8%, rgba(214, 220, 255, .54), transparent 72%),
+        radial-gradient(ellipse 520px 420px at 88% 42%, rgba(215, 235, 247, .52), transparent 72%),
+        radial-gradient(ellipse 480px 360px at 8% 63%, rgba(235, 225, 250, .40), transparent 70%),
+        var(--bg);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
     }
     a { color: inherit; }
-    a:focus-visible { outline: 3px solid #8cae9c; outline-offset: 4px; border-radius: 5px; }
-    .shell { width: min(1080px, calc(100% - 48px)); margin: 0 auto; }
+    a:focus-visible { outline: 3px solid rgba(78, 104, 230, .5); outline-offset: 4px; border-radius: 9px; }
+    .wrap { width: min(1080px, calc(100% - 48px)); margin: 0 auto; }
     .topbar {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--line);
+      position: sticky; top: 14px; z-index: 20; display: flex; align-items: center; justify-content: space-between;
+      min-height: 64px; margin-top: 14px; padding: 0 17px 0 20px; border: 1px solid rgba(255,255,255,.82);
+      border-radius: 20px; background: rgba(255,255,255,.63); backdrop-filter: blur(24px) saturate(170%);
+      -webkit-backdrop-filter: blur(24px) saturate(170%); box-shadow: 0 8px 30px rgba(25, 28, 40, .055);
     }
-    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand-mark {
-      width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
-      background: var(--green); color: #f6f3e8; font: 700 17px var(--serif); letter-spacing: -.08em;
-      box-shadow: 0 5px 14px rgba(26,64,55,.14);
-    }
-    .brand-name { font-size: 14px; font-weight: 750; letter-spacing: .16em; }
-    .nav { display: flex; align-items: center; gap: 30px; }
-    .nav a { text-decoration: none; color: var(--muted); font-size: 12px; font-weight: 600; transition: color .2s ease; }
-    .nav a:hover { color: var(--green); }
-    .nav .nav-cta { color: var(--green); border: 1px solid rgba(26,64,55,.25); padding: 10px 15px; border-radius: 999px; }
-    .hero {
-      min-height: 520px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center;
-      gap: 68px; padding: 78px 0 84px;
-    }
-    .eyebrow { display: inline-flex; gap: 10px; align-items: center; color: var(--green-2); font-size: 10px; text-transform: uppercase; font-weight: 750; letter-spacing: .17em; }
-    .eyebrow::before { content: ""; width: 23px; height: 1px; background: #7d9c8e; }
-    h1 { margin: 22px 0 19px; max-width: 570px; font: 400 clamp(46px, 6vw, 76px)/.99 var(--serif); letter-spacing: -.055em; }
-    h1 em { color: var(--green-2); font-weight: 400; }
-    .hero-copy { max-width: 465px; color: var(--muted); font-size: 15px; line-height: 1.8; }
-    .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 30px; }
-    .button {
-      display: inline-flex; align-items: center; justify-content: center; gap: 11px; min-height: 46px;
-      border-radius: 999px; padding: 0 19px; text-decoration: none; font-size: 12px; font-weight: 700;
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
-    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand-mark { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: #1b1b1f; color: #fff; font-size: 14px; font-weight: 760; letter-spacing: -.09em; }
+    .brand-name { font-size: 13px; font-weight: 760; letter-spacing: .16em; }
+    .nav { display: flex; align-items: center; gap: 25px; }
+    .nav a { color: #66666f; font-size: 12px; font-weight: 560; text-decoration: none; transition: color .2s ease; }
+    .nav a:hover { color: #16161a; }
+    .nav .nav-pill { padding: 10px 15px; border: 1px solid rgba(25,25,30,.10); border-radius: 999px; color: #1b1b20; background: rgba(255,255,255,.62); }
+    .hero { position: relative; isolation: isolate; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 54px; min-height: 625px; padding: 78px 0 82px; }
+    .hero::before { content: ""; position: absolute; z-index: -1; width: 460px; height: 460px; right: 2%; top: 75px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.88), rgba(232,235,255,.38) 44%, transparent 72%); filter: blur(8px); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #777780; font-size: 10px; font-weight: 720; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #6b8ce8; box-shadow: 0 0 0 4px rgba(107,140,232,.12); }
+    h1 { max-width: 590px; margin: 23px 0 19px; font-size: clamp(50px, 6.7vw, 82px); line-height: .99; letter-spacing: -.075em; font-weight: 670; }
+    h1 span { color: #85858e; font-weight: 500; }
+    .hero-copy { max-width: 445px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; letter-spacing: -.01em; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 11px; margin-top: 30px; }
+    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 18px; border-radius: 999px; text-decoration: none; font-size: 12px; font-weight: 650; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
     .button:hover { transform: translateY(-2px); }
-    .button-primary { background: var(--green); color: #fffefa; box-shadow: 0 8px 20px rgba(26,64,55,.14); }
-    .button-primary:hover { background: #245347; }
-    .button-secondary { color: var(--ink); border: 1px solid var(--line); background: rgba(255,254,250,.45); }
-    .button-secondary:hover { border-color: rgba(26,64,55,.36); }
-    .arrow { font-size: 16px; line-height: 1; }
-    .visual-wrap { position: relative; min-height: 340px; display: grid; place-items: center; }
-    .visual-glow { position: absolute; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(190,207,188,.65) 0%, rgba(190,207,188,.2) 49%, rgba(190,207,188,0) 72%); }
-    .visual-card {
-      position: relative; width: min(100%, 355px); padding: 25px; border: 1px solid rgba(255,255,255,.85);
-      border-radius: 24px; background: rgba(255,254,250,.83); box-shadow: 0 24px 70px rgba(27,52,43,.10);
-      transform: rotate(2deg);
-    }
-    .visual-top { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #779b83; display: inline-block; margin-right: 6px; }
-    .visual-heading { margin: 31px 0 8px; font: 400 31px/1.05 var(--serif); letter-spacing: -.04em; }
-    .visual-sub { font-size: 11px; line-height: 1.7; color: var(--muted); max-width: 230px; }
-    .visual-line { height: 1px; background: var(--line); margin: 26px 0 17px; }
-    .visual-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(24,35,31,.07); font-size: 11px; }
-    .visual-row:last-child { border-bottom: 0; }
-    .visual-row span:last-child { color: var(--green-2); font-weight: 700; }
-    .orbit { position: absolute; border: 1px solid rgba(39,91,78,.14); border-radius: 50%; width: 400px; height: 270px; transform: rotate(-27deg); }
-    .orbit::after { content: ""; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #91ad99; top: 29px; right: 56px; }
-    .location-note { position: absolute; right: 0; bottom: 2px; color: #7d8982; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-    .section-rule { border-top: 1px solid var(--line); }
-    .intro { display: grid; grid-template-columns: .75fr 1.25fr; gap: 64px; padding: 37px 0 43px; align-items: start; }
-    .section-kicker { color: var(--green-2); font-size: 10px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; padding-top: 5px; }
-    .intro p { max-width: 620px; margin: 0; color: #5e6b63; font: 400 clamp(19px, 2.2vw, 25px)/1.48 var(--serif); letter-spacing: -.018em; }
-    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; padding: 28px 0 76px; }
-    .service-card { min-height: 174px; padding: 22px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,254,250,.48); display: flex; flex-direction: column; }
-    .service-icon { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 10px; background: #e8eee6; color: var(--green); margin-bottom: 19px; }
-    .service-icon svg { width: 16px; height: 16px; }
-    .service-card h2 { margin: 0 0 7px; font: 400 19px var(--serif); letter-spacing: -.02em; }
-    .service-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.65; }
-    .service-link { margin-top: auto; padding-top: 16px; text-decoration: none; color: var(--green-2); font-size: 11px; font-weight: 750; display: inline-flex; gap: 7px; align-items: center; width: fit-content; }
-    .service-link:hover { text-decoration: underline; text-underline-offset: 3px; }
-    .footer { border-top: 1px solid var(--line); padding: 22px 0 27px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .footer-brand { color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+    .button svg { width: 15px; height: 15px; }
+    .button-primary { color: #fff; background: #1c1c20; box-shadow: 0 8px 18px rgba(20,20,25,.15); }
+    .button-primary:hover { background: #33333a; box-shadow: 0 12px 24px rgba(20,20,25,.17); }
+    .button-secondary { border: 1px solid rgba(30,30,36,.12); background: rgba(255,255,255,.56); color: #29292f; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .button-secondary:hover { background: rgba(255,255,255,.82); }
+    .hero-art { position: relative; display: grid; place-items: center; min-height: 390px; }
+    .orb { position: absolute; width: 350px; height: 350px; border-radius: 50%; background: linear-gradient(145deg, rgba(255,255,255,.95), rgba(215,222,252,.46) 48%, rgba(219,239,247,.45)); filter: blur(1px); box-shadow: inset -18px -20px 55px rgba(117,129,181,.09), inset 14px 15px 36px rgba(255,255,255,.9), 0 35px 90px rgba(95,104,157,.10); }
+    .glass-card { position: relative; width: min(100%, 355px); padding: 23px; overflow: hidden; border: 1px solid rgba(255,255,255,.88); border-radius: 27px; background: linear-gradient(145deg, rgba(255,255,255,.82), rgba(255,255,255,.48)); backdrop-filter: blur(28px) saturate(165%); -webkit-backdrop-filter: blur(28px) saturate(165%); box-shadow: 0 28px 80px rgba(40,46,78,.12), inset 0 1px 0 rgba(255,255,255,.95); transform: rotate(-3deg); }
+    .glass-card::before { content: ""; position: absolute; top: -70px; right: -40px; width: 190px; height: 190px; border-radius: 50%; background: rgba(210,219,255,.38); filter: blur(30px); pointer-events: none; }
+    .card-top { position: relative; display: flex; justify-content: space-between; align-items: center; color: #898992; font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .card-icon { position: relative; display: grid; place-items: center; width: 42px; height: 42px; margin-top: 36px; border: 1px solid rgba(255,255,255,.9); border-radius: 14px; color: #fff; background: linear-gradient(145deg, #7b8ed8, #404c82); box-shadow: 0 7px 18px rgba(75,91,151,.22); }
+    .card-icon svg { width: 20px; height: 20px; }
+    .card-title { position: relative; margin: 18px 0 8px; font-size: 29px; font-weight: 630; letter-spacing: -.06em; }
+    .card-copy { position: relative; max-width: 250px; margin: 0; color: #777782; font-size: 11px; line-height: 1.7; }
+    .card-divider { height: 1px; margin: 24px 0 12px; background: rgba(26,26,35,.08); }
+    .card-row { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(26,26,35,.06); color: #64646e; font-size: 10px; }
+    .card-row:last-child { border-bottom: 0; }
+    .card-row span:last-child { color: #454b69; font-weight: 650; }
+    .float-tag { position: absolute; right: 0; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 11px 14px; border: 1px solid rgba(255,255,255,.86); border-radius: 15px; background: rgba(255,255,255,.67); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 12px 30px rgba(34,39,60,.08); color: #555560; font-size: 10px; font-weight: 620; }
+    .float-tag svg { width: 14px; height: 14px; color: #637ac7; }
+    .section { border-top: 1px solid var(--line); }
+    .intro { display: grid; grid-template-columns: .72fr 1.28fr; gap: 60px; padding: 43px 0 42px; align-items: start; }
+    .section-label { padding-top: 5px; color: #86868e; font-size: 10px; font-weight: 720; letter-spacing: .14em; text-transform: uppercase; }
+    .intro p { max-width: 660px; margin: 0; font-size: clamp(21px, 2.7vw, 30px); line-height: 1.4; letter-spacing: -.045em; font-weight: 530; }
+    .intro p span { color: #85858e; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 20px 0 82px; }
+    .feature { min-height: 186px; padding: 22px; border: 1px solid rgba(255,255,255,.86); border-radius: 22px; background: rgba(255,255,255,.48); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); box-shadow: 0 12px 40px rgba(32,35,52,.035), inset 0 1px 0 rgba(255,255,255,.8); transition: transform .22s ease, background .22s ease, box-shadow .22s ease; }
+    .feature:hover { transform: translateY(-4px); background: rgba(255,255,255,.72); box-shadow: 0 18px 48px rgba(32,35,52,.07); }
+    .feature-icon { display: grid; place-items: center; width: 35px; height: 35px; border: 1px solid rgba(255,255,255,.92); border-radius: 12px; background: rgba(239,241,249,.9); color: #505b8d; }
+    .feature-icon svg { width: 16px; height: 16px; }
+    .feature h2 { margin: 22px 0 7px; font-size: 15px; font-weight: 650; letter-spacing: -.025em; }
+    .feature p { max-width: 260px; margin: 0; color: #777780; font-size: 11px; line-height: 1.7; }
+    .contact-panel { display: flex; align-items: center; justify-content: space-between; gap: 26px; margin: 0 0 70px; padding: 29px 31px; border: 1px solid rgba(255,255,255,.9); border-radius: 24px; background: linear-gradient(110deg, rgba(255,255,255,.78), rgba(255,255,255,.43)); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); box-shadow: var(--shadow); }
+    .contact-panel h2 { margin: 0 0 7px; font-size: 19px; letter-spacing: -.04em; font-weight: 640; }
+    .contact-panel p { margin: 0; color: #777780; font-size: 12px; line-height: 1.65; }
+    .contact-panel .button { flex: 0 0 auto; }
+    .footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0 30px; border-top: 1px solid var(--line); }
+    .copyright { color: #92929a; font-size: 10px; letter-spacing: .05em; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
-    .footer-links a { color: var(--muted); text-decoration: none; font-size: 10px; }
-    .footer-links a:hover { color: var(--green); }
-    @media (max-width: 760px) {
-      .shell { width: min(100% - 36px, 560px); }
-      .topbar { height: 70px; }
-      .nav { gap: 15px; }
-      .nav a { font-size: 11px; }
-      .nav a:not(.nav-cta) { display: none; }
-      .hero { grid-template-columns: 1fr; gap: 28px; padding: 65px 0 54px; min-height: 0; }
-      h1 { max-width: 500px; font-size: clamp(48px, 12vw, 68px); }
-      .hero-copy { font-size: 14px; }
-      .visual-wrap { min-height: 300px; }
-      .visual-card { max-width: 340px; }
-      .orbit { width: 340px; height: 240px; }
-      .location-note { right: 6px; bottom: -5px; }
-      .intro { grid-template-columns: 1fr; gap: 14px; padding: 28px 0 31px; }
-      .services { grid-template-columns: 1fr; padding: 18px 0 48px; }
-      .service-card { min-height: 152px; }
-      .service-icon { margin-bottom: 14px; }
+    .footer-links a { color: #777780; font-size: 10px; text-decoration: none; transition: color .2s ease; }
+    .footer-links a:hover { color: #1b1b20; }
+    @media (max-width: 780px) {
+      .wrap { width: min(100% - 36px, 600px); }
+      .hero { grid-template-columns: 1fr; min-height: 0; gap: 20px; padding: 78px 0 58px; }
+      .hero-copy { max-width: 520px; }
+      .hero-art { min-height: 355px; }
+      .orb { width: 310px; height: 310px; }
+      .glass-card { max-width: 335px; }
+      .float-tag { right: 3%; bottom: 12px; }
+      .intro { grid-template-columns: 1fr; gap: 15px; padding: 32px 0; }
+      .feature-grid { grid-template-columns: 1fr; padding-bottom: 52px; }
+      .feature { min-height: 145px; }
+      .feature h2 { margin-top: 14px; }
+      .contact-panel { align-items: flex-start; flex-direction: column; margin-bottom: 50px; padding: 24px; }
     }
-    @media (max-width: 390px) {
-      .brand-name { font-size: 12px; }
-      .nav .nav-cta { padding: 9px 12px; }
-      .actions { flex-direction: column; align-items: stretch; }
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 28px); }
+      .topbar { top: 8px; min-height: 58px; margin-top: 8px; padding: 0 11px 0 14px; border-radius: 17px; }
+      .brand-name { font-size: 11px; }
+      .brand-mark { width: 29px; height: 29px; }
+      .nav { gap: 14px; }
+      .nav a { font-size: 11px; }
+      .nav a:not(.nav-pill) { display: none; }
+      .nav .nav-pill { padding: 9px 12px; }
+      .hero { padding-top: 65px; }
+      h1 { font-size: clamp(49px, 13vw, 66px); }
+      .hero-copy { font-size: 14px; }
+      .actions { align-items: stretch; flex-direction: column; }
       .button { width: 100%; }
+      .hero-art { min-height: 320px; }
+      .orb { width: 275px; height: 275px; }
+      .glass-card { max-width: 305px; padding: 20px; }
+      .float-tag { right: 0; bottom: 2px; }
       .footer { align-items: flex-start; flex-direction: column; }
+      .footer-links { gap: 18px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+    @supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
+      .topbar, .glass-card, .float-tag, .feature, .contact-panel { background: rgba(255,255,255,.94); }
     }
   </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "PUSPITAN",
+    "@type": "Person",
+    "name": "Nenden Puspita",
+    "alternateName": "PUSPITAN",
     "url": "https://puspitan680.github.io/",
     "email": "nendenpuspitah42@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bandung",
-      "addressCountry": "ID"
-    }
+    "address": { "@type": "PostalAddress", "addressLocality": "Bandung", "addressCountry": "ID" }
   }
   </script>
 </head>
 <body>
-  <div class="shell">
+  <div class="wrap">
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="PUSPITAN home">
-        <span class="brand-mark" aria-hidden="true">P.</span>
+      <a class="brand" href="/" aria-label="PUSPITAN home">
+        <span class="brand-mark" aria-hidden="true">P</span>
         <span class="brand-name">PUSPITAN</span>
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#connect">Connect</a>
-        <a class="nav-cta" href="https://play.google.com/store/apps/dev?id=6470678300491348665" target="_blank" rel="noopener noreferrer">View on Google Play <span aria-hidden="true">↗</span></a>
+        <a href="#support">Support</a>
+        <a class="nav-pill" href="https://play.google.com/store/search?q=PUSPITAN&amp;c=apps" target="_blank" rel="noopener noreferrer">Google Play <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
 
-    <main id="home">
+    <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div>
-          <div class="eyebrow">Independent Android developer</div>
-          <h1 id="hero-title">Useful apps.<br><em>Made with care.</em></h1>
-          <p class="hero-copy">PUSPITAN creates thoughtful Android apps with a focus on clarity, usability, and everyday usefulness. Discover our apps on Google Play.</p>
+        <div class="hero-content">
+          <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Independent Android developer</div>
+          <h1 id="hero-title">Thoughtful apps.<br><span>Made simple.</span></h1>
+          <p class="hero-copy">PUSPITAN creates straightforward Android experiences with a focus on clarity, care, and the little details that make everyday tasks feel easier.</p>
           <div class="actions">
-            <a class="button button-primary" href="https://play.google.com/store/apps/dev?id=6470678300491348665" target="_blank" rel="noopener noreferrer">Explore on Google Play <span class="arrow" aria-hidden="true">↗</span></a>
-            <a class="button button-secondary" href="mailto:nendenpuspitah42@gmail.com">Get in touch <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="button button-primary" href="https://play.google.com/store/search?q=PUSPITAN&amp;c=apps" target="_blank" rel="noopener noreferrer">
+              Explore on Google Play
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+            <a class="button button-secondary" href="mailto:nendenpuspitah42@gmail.com">Get in touch</a>
           </div>
         </div>
 
-        <div class="visual-wrap" aria-hidden="true">
-          <div class="visual-glow"></div>
-          <div class="orbit"></div>
-          <div class="visual-card">
-            <div class="visual-top"><span>PUSPITAN / Studio</span><span><i class="status-dot"></i>Android</span></div>
-            <div class="visual-heading">Thoughtful by<br>design.</div>
-            <div class="visual-sub">A considered approach to useful digital experiences.</div>
-            <div class="visual-line"></div>
-            <div class="visual-row"><span>Purpose</span><span>Clear</span></div>
-            <div class="visual-row"><span>Experience</span><span>Simple</span></div>
-            <div class="visual-row"><span>Details</span><span>Considered</span></div>
+        <div class="hero-art" aria-label="Abstract glass panel representing thoughtful app design">
+          <div class="orb" aria-hidden="true"></div>
+          <div class="glass-card">
+            <div class="card-top"><span>PUSPITAN / STUDIO NOTES</span><span>01 — 03</span></div>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 14.2 9l5.8 2.2-5.8 2.2L12 19l-2.2-5.6L4 11.2 9.8 9 12 3.5Z"/><path d="m19 16 .9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9L19 16Z"/></svg>
+            </div>
+            <h2 class="card-title">Small details.<br>Better experiences.</h2>
+            <p class="card-copy">A thoughtful approach to building useful tools for everyday life.</p>
+            <div class="card-divider"></div>
+            <div class="card-row"><span>Clarity</span><span>By design</span></div>
+            <div class="card-row"><span>Usability</span><span>Always in mind</span></div>
+            <div class="card-row"><span>Platform</span><span>Android</span></div>
           </div>
-          <div class="location-note">Bandung · Indonesia</div>
+          <div class="float-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg> Built with intention</div>
         </div>
       </section>
 
-      <section class="section-rule" id="about" aria-labelledby="about-title">
+      <section class="section" id="about" aria-labelledby="about-title">
         <div class="intro">
-          <div class="section-kicker" id="about-title">A little about PUSPITAN</div>
-          <p>Independent app development from Bandung, Indonesia — creating accessible, straightforward mobile experiences, one useful idea at a time.</p>
+          <div class="section-label" id="about-title">A little about PUSPITAN</div>
+          <p>Independent by nature. <span>Intentional by design.</span><br>Creating useful mobile experiences, one idea at a time.</p>
         </div>
       </section>
 
-      <section class="services" id="connect" aria-label="Explore and contact">
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.8" width="12" height="18.4" rx="2.2"/><path d="M10 18h4"/></svg>
-          </div>
-          <h2>Our apps</h2>
-          <p>Find apps published by PUSPITAN and view their details on Google Play.</p>
-          <a class="service-link" href="https://play.google.com/store/apps/dev?id=6470678300491348665" target="_blank" rel="noopener noreferrer">Browse apps <span aria-hidden="true">↗</span></a>
+      <section class="feature-grid" aria-label="Development principles">
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h13"/></svg></div>
+          <h2>Clarity first</h2>
+          <p>Interfaces should feel natural, focused, and easy to understand.</p>
         </article>
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 14.4 9.6 20.5 12l-6.1 2.4L12 20.5l-2.4-6.1L3.5 12l6.1-2.4L12 3.5Z"/></svg></div>
+          <h2>Thoughtful details</h2>
+          <p>Small decisions add up to a calmer, more considered experience.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10 18.2h4"/></svg></div>
+          <h2>Made for Android</h2>
+          <p>Practical mobile tools designed around real-world everyday use.</p>
+        </article>
+      </section>
 
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v13H4z"/><path d="m4.5 6 7.5 6 7.5-6"/></svg>
-          </div>
-          <h2>Help & support</h2>
-          <p>Have a question, feedback, or need help with one of our apps? Send us a message.</p>
-          <a class="service-link" href="mailto:nendenpuspitah42@gmail.com">Email support <span aria-hidden="true">→</span></a>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h7l4 4v13H7z"/><path d="M14 3.5v4h4M10 12h5M10 16h5"/></svg>
-          </div>
-          <h2>Terms of service</h2>
-          <p>Read the terms that apply to the use of PUSPITAN apps and related services.</p>
-          <a class="service-link" href="/terms-of-service-puspitan.html">Read the terms <span aria-hidden="true">→</span></a>
-        </article>
+      <section class="contact-panel" id="support" aria-labelledby="support-title">
+        <div>
+          <h2 id="support-title">Need a hand?</h2>
+          <p>Questions, feedback, or support for a PUSPITAN app? Send a note by email.</p>
+        </div>
+        <a class="button button-primary" href="mailto:nendenpuspitah42@gmail.com">Contact support <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="footer-brand">© 2026 PUSPITAN · BANDUNG, INDONESIA</div>
-      <div class="footer-links">
+      <div class="copyright">© 2026 PUSPITAN · INDONESIA</div>
+      <nav class="footer-links" aria-label="Footer navigation">
         <a href="mailto:nendenpuspitah42@gmail.com">Contact</a>
-        <a href="https://play.google.com/store/apps/dev?id=6470678300491348665" target="_blank" rel="noopener noreferrer">Google Play</a>
-        <a href="/terms-of-service-puspitan.html">Terms of Service</a>
-      </div>
+        <a href="https://play.google.com/store/search?q=PUSPITAN&amp;c=apps" target="_blank" rel="noopener noreferrer">Google Play</a>
+        <a href="/terms/">Terms of Service</a>
+      </nav>
     </footer>
   </div>
 </body>
